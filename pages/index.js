@@ -21,26 +21,42 @@ export default function Home() {
             <main>
 
                 <Navbar></Navbar>
+                <div className="pb-12">
+                    <section className="pb-10">
+                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                            <div className='px-10 mt-10'>
+                                <h2 className='font-bold text-2xl'>به مارک داون خوش آمدید</h2>
+                                <div className='mt-10 bg-yellow-100 py-4 px-6'>
+                                    <p>
 
-                <div className='flex flex-row mt-2 px-5'>
+                                        Markdown یک ابزار تبدیل متن به HTML برای نویسندگان وب است. Markdown به شما امکان
+                                        می دهد با استفاده از یک قالب ساده برای خواندن و نوشتن آسان بنویسید ، سپس آن را
+                                        به XHTML (یا HTML) معتبر ساختاری تبدیل کنید.
 
-                    <div className='flex flex-1 px-5'>
-                        <textarea className='w-full h-min-screen'
-                                  onChange={(event) => (setMarkdown(event.target.value))}></textarea>
-                    </div>
-                    <div
-                        className='flex flex-1 px-5 w-full h-screen navHeight_off overflow-y-scroll hidden flex-col flex-1 w-full py-4 bg-blue-100 md:flex border-r-4 border-blue-100 '>
-                        <article className="prose lg:prose-xl w-full">
-                            <MarkdownView
-                                markdown={markdown}
-                                options={{tables: true, emoji: true}}
-                            />
-                        </article>
-                    </div>
+
+                                        <br/>
+
+                                        Markdown در نظر گرفته شده است با عنوان آسان برای خواندن و آسان برای نوشتن به
+                                        عنوان امکان پذیر است. با این حال، بر خوانایی بیش از هر چیز تأکید شده است. یک
+                                        سند با فرمت Markdown باید همانطور که هست، به عنوان یک متن ساده، قابل انتشار
+                                        باشد، بدون اینکه با برچسب ها یا دستورالعمل های قالب بندی مشخص شده باشد.
+
+                                        <br/>
+                                        برای این منظور ، نحو Markdown کاملاً از نکات نگارشی تشکیل شده است، که
+                                        کاراکترهای نقطه گذاری با دقت انتخاب شده اند تا به معنی آنها برسند. به
+                                        عنوان مثال ، ستاره های اطراف یک کلمه در واقع شبیه *تأکید* هستند. لیست
+                                        های Markdown شبیه به لیست ها هستند. حتی با وجود فرض اینکه شما تا به حال
+                                        از ایمیل استفاده کرده اید ، نقل قول های بلوک مانند متن های نقل قول شده
+                                        به نظر می رسند.
+
+                                        <br/>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-
-                <LoginBtn></LoginBtn>
-
             </main>
         </>
     )
