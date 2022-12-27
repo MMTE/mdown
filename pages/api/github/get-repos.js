@@ -12,21 +12,11 @@ export default async function handler(req, res) {
         })
     }
 
-    // user is logged in
+    // let email = session.user.email
 
-    // get user's email
+    let installationId = session.user.github_installation_id
 
-    let email = session.user.email
-
-    // find installation id of user (DB)
-
-    // check if installation is not revoked
-    // if installation is revoked respond respectively
-
-
-    // use installation id to get users repositories
-
-    const github = new Github('32515512')
+    const github = new Github(installationId)
 
     let authData = await github.authenticate();
 

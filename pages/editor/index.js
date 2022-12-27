@@ -15,10 +15,10 @@ export default function Home() {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        if (!router.query.repo && !router.query.path)
+        if (!router.query.repo && !router.query.path && !router.query.owner)
             return
         setLoading(true)
-        fetch('/api/github/get-content?repo=' + router.query.repo + '&path=' + router.query.path)
+        fetch('/api/github/get-content?repo=' + router.query.repo + '&path=' + router.query.path + '&owner=' + router.query.owner)
             .then((res) => res.json())
             .then(({data}) => {
                 setData(data.details)

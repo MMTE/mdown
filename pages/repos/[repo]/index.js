@@ -9,15 +9,17 @@ import GetContents from './../../components/get-contents'
 export default function Home() {
 
     const [repo, setRepo] = useState('')
+    const [owner, setOwner] = useState('')
     const [path, setPath] = useState('.')
     const [isLoading, setLoading] = useState(false)
     const router = useRouter()
 
     useEffect(() => {
-        if (!router.query.repo)
+        if (!router.query.repo && !router.query.owner)
             return
         setLoading(true)
         setRepo(router.query.repo)
+        setOwner(router.query.owner)
     }, [router.query])
 
 
@@ -41,7 +43,7 @@ export default function Home() {
                                 <div className='mt-10 '>
                                     {
                                         repo && path &&
-                                        <GetContents repo={repo} path={path}></GetContents>
+                                        <GetContents owner={owner} repo={repo} path={path}></GetContents>
                                     }
                                 </div>
                             </div>

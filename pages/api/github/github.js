@@ -64,7 +64,7 @@ export class Github {
     }
 
     // get single file
-    async getContent(owner = 'mmte', repo, path = '/') {
+    async getContent(owner = null, repo, path = '/') {
         return await this.octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
             owner: owner,
             repo: repo,
@@ -73,16 +73,16 @@ export class Github {
     }
 
     // commit file
-    async commit(owner = 'mmte', repo, path = '/', file, sha = null) {
+    async commit(owner = null, repo, path = '/', file, sha = null, message = null, name = ' ', email = ' ') {
 
         return await this.octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-            owner: 'mmte',
+            owner: owner,
             repo: repo,
             path: path,
-            message: 'my commit message',
+            message: message,
             committer: {
-                name: 'Monalisa Octocat',
-                email: 'octocat@github.com'
+                name: name,
+                email: email
             },
             content: file,
             sha: sha

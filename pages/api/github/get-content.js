@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 
     let repo = req.query.repo
     let path = req.query.path
+    let owner = req.query.owner
 
     const session = await unstable_getServerSession(req, res, authOptions)
 
@@ -15,19 +16,21 @@ export default async function handler(req, res) {
         })
     }
 
-    let email = session.user.email
+    // let email = session.user.email
 
-    const github = new Github('32515512')
+    let installationId = session.user.github_installation_id
+
+    const github = new Github(installationId)
 
     let authData = await github.authenticate();
 
-    let {data} = await github.getContent('mmte', repo, path)
+    // let owner = authData.data.owner.login
+
+    let {data} = await github.getContent(owner, repo, path)
 
     if (data.type === 'file') {
 
         let content = Buffer.from(data.content, 'base64').toString()
-
-        console.log(data)
 
         res.status(200).json({
             data: {

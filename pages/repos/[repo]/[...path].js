@@ -10,6 +10,7 @@ export default function Home() {
 
 
     const [markdown, setMarkdown] = useState(null);
+    const [owner, setOwner] = useState('')
     const [repo, setRepo] = useState('')
     const [path, setPath] = useState('')
     const [data, setData] = useState(null)
@@ -22,6 +23,7 @@ export default function Home() {
         setPath('')
         setLoading(true)
         setRepo(router.query.repo)
+        setOwner(router.query.owner)
         router.query.path.map((item, index) => (setPath((prev) => (prev + '/' + item))))
     }, [router.query])
 
@@ -44,7 +46,7 @@ export default function Home() {
                                 <h2 className='text-xl'>شما در مسیر {path} هستید </h2>
 
                                 <div className='mt-10 '>
-                                    <GetContents repo={repo} path={path}></GetContents>
+                                    <GetContents owner={owner} repo={repo} path={path}></GetContents>
                                 </div>
                             </div>
                         </div>

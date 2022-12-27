@@ -6,10 +6,10 @@ export default function GetRepos(props) {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        if (!props.repo && !props.path)
+        if (!props.repo && !props.path && !props.owner)
             return
         setLoading(true)
-        fetch('/api/github/get-content?repo=' + props.repo + '&path=' + props.path)
+        fetch('/api/github/get-content?repo=' + props.repo + '&path=' + props.path +'&owner=' + props.owner )
             .then((res) => res.json())
             .then(({data}) => {
                 setData(data.content)
@@ -29,7 +29,7 @@ export default function GetRepos(props) {
                     <div key={i}
                          className="flex flex-row-reverse justify-between p-2 bg-white border border-gray-200 rounded shadow mb-5">
                         <a style={{direction: "ltr"}} className='flex flex-row'
-                           href={item.type === 'dir' ? `/repos/${props.repo}/${props.path}/${item.name}` : `/editor?repo=${props.repo}&path=${props.path === '.' ? '' : props.path}/${item.name}`}>
+                           href={item.type === 'dir' ? `/repos/${props.repo}/${props.path}/${item.name}?owner=${props.owner}` : `/editor?repo=${props.repo}&path=${props.path === '.' ? '' : props.path}/${item.name}&owner=${props.owner}`}>
                             {
                                 item.type === 'dir' &&
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

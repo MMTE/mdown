@@ -3,9 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
+
 
 model Account {
   id                 String  @id @default(cuid())
@@ -48,8 +49,8 @@ model User {
   phone         String?
   emailVerified DateTime?
   image         String?
+  github_installation_id         String?
   premium     String?
-  github_installation_id    String?
   accounts      Account[]
   sessions      Session[]
     createdAt        DateTime           @default(now())
