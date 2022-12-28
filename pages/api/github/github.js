@@ -1,4 +1,4 @@
-const privateKey = process.env.GITHUB_PRIVATE_KEY.replace(/(\\r)|(\\n)/g, '\n')
+const privateKey = Buffer.from(process.env.GITHUB_PRIVATE_KEY, 'base64').toString()
 
 const {createAppAuth} = require("@octokit/auth-app");
 const {Octokit} = require("octokit");
