@@ -80,7 +80,7 @@ export default function Home() {
                                     <>
                                         <div className='container mx-auto content-center items-center px-6 py-4'>
                                             <p className='text-xl'>برای ویرایش فایل‌ها به صورت مستقیم از گیت‌هاب ابتدا لازم است. وبسایت mdown را به گیت‌هاب خود متصل کنید</p>
-                                            <Link href='https://github.com/apps/mmte-mdown'>
+                                            <Link href='https://github.com/apps/mdownBot'>
                                                 <button className="w-full mt-10 group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                                     <div

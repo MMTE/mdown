@@ -3,7 +3,7 @@ const privateKey = Buffer.from(process.env.GITHUB_PRIVATE_KEY, 'base64').toStrin
 const {createAppAuth} = require("@octokit/auth-app");
 const {Octokit} = require("octokit");
 
-const appId = process.env.GITHUB_ID
+const appId = process.env.GITHUB_APP_ID
 
 export class Github {
 
