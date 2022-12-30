@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     let setup_action = req.query.setup_action
 
-    if (setup_action === 'install') {
+    if (installation_id && setup_action === 'install') {
 
         updateUser(id, installation_id)
             .then(async () => {
@@ -30,10 +30,10 @@ export default async function handler(req, res) {
                 process.exit(1)
             })
 
+        res.redirect('/app-install-status?status=ok')
+    } else {
+        res.redirect('/app-install-status?status=nok')
     }
-
-    res.send('installed succesfully')
-
 }
 
 
