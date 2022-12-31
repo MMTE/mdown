@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import {useState} from 'react';
-import LoginBtn from '/pages/components/login-btn'
+import LoginBtn from '/components/login-btn'
 import {useEffect} from 'react'
-import Navbar from '../../components/navbar'
+import Navbar from '/components/navbar'
 import {useRouter} from 'next/router'
-import GetContents from './../../components/get-contents'
+import GetContents from '/components/get-contents'
 
 export default function Home() {
 

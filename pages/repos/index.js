@@ -1,9 +1,7 @@
-import Head from 'next/head'
 import {useState} from 'react';
 import Link from "next/link";
 import {useEffect} from 'react'
-import Navbar from "../components/navbar";
-import AppLayout from "../components/layouts/app";
+import AppLayout from "/components/layouts/app";
 import {useSession} from "next-auth/react";
 
 

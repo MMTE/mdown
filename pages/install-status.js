@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from './components/navbar'
+import Navbar from '/components/navbar'
 import {signOut, useSession} from "next-auth/react"
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";

@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import {useEffect, useState} from 'react';
 import MarkdownView from 'react-showdown';
-import LoginBtn from '/pages/components/login-btn'
-import Link from "next/link";
-import Navbar from '../components/navbar'
+import Navbar from '/components/navbar'
 import {useRouter} from 'next/router'
-import CommitDialog from '../components/commit-dialog'
+import CommitDialog from '/components/commit-dialog'
 
 export default function Home() {
 

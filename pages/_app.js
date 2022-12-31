@@ -2,7 +2,7 @@ import {SessionProvider} from "next-auth/react"
 import '../styles/globals.css'
 import localFont from '@next/font/local'
 
-const Vazirmatn = localFont({src: '/fonts/Vazirmatn[wght].woff2'})
+const Vazirmatn = localFont({src: '../fonts/Vazirmatn[wght].woff2'})
 
 // import { Vazirmatn } from '@next/font/google'
 
