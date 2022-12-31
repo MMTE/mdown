@@ -69,8 +69,7 @@ export default function Home() {
                                 session.user.github_installation_id ?
                                     <>
                                         <h2 className='font-bold text-2xl'>مخازن گیت‌هاب</h2>
-                                        <div className='mt-10 '>
-
+                                        <div className='mt-10'>
                                             <GetRepos></GetRepos>
                                         </div>
                                     </>
