@@ -6,7 +6,7 @@ import {signOut, useSession} from "next-auth/react"
 
 const navigation = [
     {name: 'خانه', href: '/', current: false},
-    {name: 'ویرایشگر آنلاین', href: '/editor', current: true},
+    {name: 'ویرایشگر مارک داون', href: '/editor', current: true},
     {name: 'راهنمای مارک داون', href: '/mark-down', current: false},
     {name: 'اتصال به گیت‌هاب', href: '/repos', current: false},
 ]
