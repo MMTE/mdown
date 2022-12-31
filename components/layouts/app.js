@@ -2,8 +2,10 @@ import {useSession, signIn, signOut} from "next-auth/react"
 import Head from "next/head";
 import Navbar from "../navbar";
 import Link from "next/link";
+import {useEffect} from "react";
 
 export default function AppLayout(props) {
+
     const {data: session, status} = useSession()
 
     return (
@@ -20,14 +22,9 @@ export default function AppLayout(props) {
                 {
                     status === 'loading' ?
                         <p>Loading...</p>
+
                         :
-                        session ?
-                            <>
-                                {props.children}
-                            </>
-                            :
-                            // not logged in message
-                            <div class="h-screen relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
+                        !session ? <div class="h-screen relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
                                 <div class="relative container m-auto text-gray-800">
                                     <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
                                         <div class="rounded-xl bg-white shadow-xl">
@@ -54,6 +51,10 @@ export default function AppLayout(props) {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            :
+                            <div>
+                                {props.children}
                             </div>
                 }
 

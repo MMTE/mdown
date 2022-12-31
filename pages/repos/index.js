@@ -46,9 +46,10 @@ function GetRepos() {
     )
 }
 
-export default function Home() {
+export default function Repos() {
 
     const [installationId, setInstallationId] = useState(null)
+
     const {data: session, status} = useSession()
 
     const [markdown, setMarkdown] = useState('');
@@ -66,7 +67,7 @@ export default function Home() {
                                 status === 'loading' ?
                                     <p>Loading...</p>
                                     :
-                                session.user.github_installation_id ?
+                                session && session.user.github_installation_id ?
                                     <>
                                         <h2 className='font-bold text-2xl'>مخازن گیت‌هاب</h2>
                                         <div className='mt-10'>
