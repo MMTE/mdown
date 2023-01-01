@@ -8,9 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   sans: ['Vazirmatn', ...fontFamily.sans],
-      // },
+      fontFamily: {
+        sans: ['vazir', ...fontFamily.sans],
+      },
     },
   },
   plugins: [

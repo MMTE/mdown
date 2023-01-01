@@ -19,8 +19,8 @@ export default function Home() {
                 <Navbar></Navbar>
                 <div className="pb-12">
                     <section className="pb-10">
-                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <div className='px-10 mt-10'>
+                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 border-2 mt-10 rounded bg-gray-100 ">
+                            <div className='mt-10'>
                                 <h2 className='font-bold text-2xl'>به مارک داون خوش آمدید</h2>
                                 <div className='mt-10 bg-yellow-100 py-4 px-6'>
                                     <p><b>ام داون</b> یک ویرایشگر مارک‌داون است. مارک داون یک استاندارد نوشتاری است که
@@ -91,7 +91,7 @@ export default function Home() {
                                     <p>برای ساخت ام‌داون از Nextjs که بر پایه فریمورک React js است استفاده شده است. همینطور جهت ارتباط با Backend از قابلیت‌ api در next js استفاده شده است که api سرور کوچک و بسیار مینیمالی دارد. </p>
                                     <p>ارتباط با github در oauth توسط next-auth انجام می‌شود و ارتباط با api های github apps توسط کتابخانه‌های js octokit انجام می‌شود.</p>
                                     <p>اطلاعات حساب‌های کاربری در یک دیتابیس mysql ذخیره می‌شود و توسط ORM پریسما (Prisma) اطلاعات دریافت یا اصلاح می‌شوند. این دیتابیس ارتباط مستقیم با اینترنت ندارد و تنها توسط یک شبکه‌ی داکر به reverse proxy ترافیک (traefik) و برنامه next js متصل است.</p>
-                                    <p>تبدیلگر مارک‌داون استفاده شده <a href='https://showdownjs.com/'>showdow js</a> است و برای استفاده از آن در react js از <a href='https://github.com/jerolimov/react-showdown'>این ریپو</a> استفاده شده است.</p>
+                                    <p>تبدیلگر مارک‌داون استفاده شده <a href='https://showdownjs.com/'>showdown js</a> است و برای استفاده از آن در react js از <a href='https://github.com/jerolimov/react-showdown'>این ریپو</a> استفاده شده است.</p>
                                     <p>انشالله پروژه را در گیت‌هاب منتشر خواهم کرد.</p>
                                     <h3 className='text-3xl font-bold '>
                                         حریم خصوصی

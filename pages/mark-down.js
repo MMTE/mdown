@@ -18,9 +18,9 @@ export default function MarkDown() {
                 <div className="pb-12">
                     <section className="pb-10">
                         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <div className='prose-base prose-a:text-blue-700 prose-a:underline px-10 mt-10'>
-                                <p className='text-2xl leading-loose'>در این صفحه قرار است آموزش مارک‌داون به زبان فارسی قرار گیرد و در آینده تکمیل می‌شود. برای مطالعه در مورد مارک‌داون می‌توانید <a href='https://www.markdownguide.org/'>به این سایت</a> مراجعه کنید یا در اینترنت به صورت فارسی یا انگلیسی جستجو کنید.</p>
-                                <p className='text-2xl leading-loose'>اگر پیشنهادی دارید یا آموزشی را پیشنهاد می‌دهید می‌توانید به work.taleghani بر روی جی‌میل ایمیل کنید.</p>
+                            <div className='min-h-screen prose-base prose-a:text-blue-700 prose-a:underline px-10 mt-10'>
+                                <p className=''>در این صفحه قرار است آموزش مارک‌داون به زبان فارسی قرار گیرد و در آینده تکمیل می‌شود. برای مطالعه در مورد مارک‌داون می‌توانید <a href='https://www.markdownguide.org/'>به این سایت</a> مراجعه کنید یا در اینترنت به صورت فارسی یا انگلیسی جستجو کنید.</p>
+                                <p className=''>اگر پیشنهادی دارید یا آموزشی را پیشنهاد می‌دهید می‌توانید به work.taleghani بر روی جی‌میل ایمیل کنید.</p>
                             </div>
                         </div>
                     </section>

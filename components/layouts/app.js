@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../navbar";
 import Link from "next/link";
 import {useEffect} from "react";
+import Footer from "../footer";
 
 export default function AppLayout(props) {
 
@@ -59,6 +60,7 @@ export default function AppLayout(props) {
                 }
 
             </main>
+            <Footer></Footer>
         </>
     )
 
