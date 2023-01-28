@@ -27,7 +27,8 @@
     "react-showdown": "^2.3.1",
     "react-simplemde-editor": "^5.2.0",
     "showdown": "^2.1.0",
-    "simplemde-rtl": "^2.0.3"
+    "simplemde-rtl": "^2.0.3",
+    "swr": "^2.0.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",

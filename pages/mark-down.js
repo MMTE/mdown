@@ -1,5 +1,29 @@
 import Head from 'next/head'
 import Navbar from '/components/navbar'
+import MarkdownView from "react-showdown";
+import useSWR from 'swr';
+
+//Write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+function ShowMarkdown() {
+    //Set up SWR to run the fetcher function when calling "/api/staticdata"
+    //There are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data
+    const {data, error} = useSWR('/api/staticdata', fetcher);
+
+    //Handle the error state
+    if (error) return <div>Failed to load</div>;
+    //Handle the loading state
+    if (!data) return <div>Loading...</div>;
+    //Handle the ready state and display the result contained in the data object mapped to the structure of the json file
+    return (
+        <MarkdownView
+            markdown={data}
+            options={{tables: true, emoji: true}}
+        />
+    );
+}
+
 
 export default function MarkDown() {
 
@@ -17,10 +41,17 @@ export default function MarkDown() {
 
                 <div className="pb-12">
                     <section className="pb-10">
-                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <div className='min-h-screen prose-base prose-a:text-blue-700 prose-a:underline px-10 mt-10'>
-                                <p className=''>در این صفحه قرار است آموزش مارک‌داون به زبان فارسی قرار گیرد و در آینده تکمیل می‌شود. برای مطالعه در مورد مارک‌داون می‌توانید <a href='https://www.markdownguide.org/'>به این سایت</a> مراجعه کنید یا در اینترنت به صورت فارسی یا انگلیسی جستجو کنید.</p>
-                                <p className=''>اگر پیشنهادی دارید یا آموزشی را پیشنهاد می‌دهید می‌توانید به work.taleghani بر روی جی‌میل ایمیل کنید.</p>
+                        <div className="max-w-7xl mx-auto p-4 sm:px-6 lg:px-8">
+                            <article className="mt-10 prose lg:prose-xl max-w-none">
+                                <ShowMarkdown></ShowMarkdown>
+                            </article>
+                            <div
+                                className='min-h-screen prose-base prose-a:text-blue-700 prose-a:underline px-10 mt-10'>
+                                <hr/>
+                                <p className=''>شما هم می‌توانید در این آموزش مشارکت کنید. لینک پروژه گیت‌هاب:</p>
+                                <a href='https://github.com/MMTE/persian-markdown'>
+                                    مارک‌داون فارسی
+                                </a>
                             </div>
                         </div>
                     </section>
