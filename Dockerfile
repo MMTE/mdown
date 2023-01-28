@@ -27,9 +27,9 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY /prisma /app
+COPY /persian-markdown /app
 
 COPY --from=deps /app/public ./public
-
 COPY --from=deps --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=deps --chown=nextjs:nodejs /app/.next/static ./.next/static
 
